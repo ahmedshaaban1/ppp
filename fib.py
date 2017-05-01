@@ -13,7 +13,7 @@ def main(n, l):
     if l:
         for i in range(n):
             print("The fibonacci number for '{}' is {}".format(
-                i, fibonacci(i)))
+                i, fibonacci(i)), flush=True)
 
     print("The fibonacci number for '{}' is {}".format(
         n, fibonacci(n)))
