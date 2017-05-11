@@ -7,7 +7,7 @@ User=ubuntu
 Group=ubuntu
 PrivateDevices=Yes
 WorkingDirectory=/opt/ppp
-ExecStart=source /home/ubuntu/.virtualenvs/ppp/bin/activate && /usr/local/bin/flower -A geoutils --port=5555 --address='*'
+ExecStart=/home/ubuntu/.virtualenvs/ppp/bin/flower -A celery_example --port=5555 --address='*'
 
 [Install]
 WantedBy=multi-user.target
