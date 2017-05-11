@@ -42,7 +42,7 @@ avg = ds.groupby('time.season') / ds.astype(float).groupby('time.season').sum()
 ## What is Parallel Programming?
 
 + Parallel programming is the process of 'pitching' work to some one else.
-+ Once we've pictched to work to someone else,  we can continue to the next statement.
++ Once we've pitched to work to someone else,  we can continue to the next statement.
 
 ## What is Parallel Programming?
 
@@ -66,15 +66,15 @@ avg = ds.groupby('time.season') / ds.astype(float).groupby('time.season').sum()
 
 ## What is Parallel Programming?
 
-If I have a function that takes 30 seconds and I need to run it 10 times, that will take me 5 minutes in wall time.  If I can pitch those 10 jobs to 10 different CPU's, then waiting for it to complete should only take ~30 seconds (thats 10x improvement!)
+If I have a function that takes 30 seconds and I need to run it 10 times, that will take me 5 minutes in wall time.  If I can pitch those 10 jobs to 10 different CPU's, then waiting for it to complete should only take ~30 seconds (that's 10x improvement!)
 
 +++ 
 
-## Embarassingly Parallel Programming
+## Embarrassingly Parallel Programming
 
 + File conversion
 + Extract, Transform, Load pipelines
-+ Paramater Sweeps 
++ Parameter Sweeps 
 + Anything that can be cut up, worked on, and stitched back together. 
 
 
@@ -98,18 +98,36 @@ If I have a function that takes 30 seconds and I need to run it 10 times, that w
 +++
 
 ## Subprocess
++ Run a command line script from python
++ The ```subprocess``` module pitches
++ The operating system catches that work
++ Pitch a string that run's the command
 
 +++
 
 ## Multiprocessing
++ Run a function in a different process
++ the ```multiprocessing``` module pitches
++ A ```Pool``` of process objects catches
++ Pitch a python function
 
 +++
 
 ## IPyParallel
++ Run functions in parallel from Jupyter Cells
++ a special ```view``` object does the pitching
++ The ```ipcluster``` or ```ipengine``` commands catch
++ Can be run across computers (but this takes a little work)
+
 
 +++
 
 ## Celery
++ Resiliently run hundreds of millions of functions in parallel
++ A decorated function pitches itself
++ A message queue called ```rabbitmq``` catches the work
++ The queue passes the work to a ```celery worker``` command
++ The technology that powers instagram. 
 
 +++
 
