@@ -22,7 +22,7 @@ Kitware Inc.
 ```python
 ds = xr.open_dataset('/path/to/some.nc')
 ```
-Inputs, Functions, Outputs
+Inputs - Functions - Outputs
 
 +++ 
 
@@ -34,7 +34,7 @@ ds = xr.open_dataset('/path/to/some.nc')
 avg = ds.groupby('time.season') / ds.astype(float).groupby('time.season').sum()
 ```
 + Some times the work takes a long time.
-+ Can't calculate ```avg``` until the ```open_dataset`` is complete.
++ Can't calculate ```avg``` until ```open_dataset``` is complete.
 + One after another, input, transformation, output
 
 +++
@@ -44,7 +44,7 @@ avg = ds.groupby('time.season') / ds.astype(float).groupby('time.season').sum()
 + Parallel programming is the process of 'pitching' work to some one else.
 + Once we've pitched to work to someone else,  we can continue to the next statement.
 
-## What is Parallel Programming?
++++
 
 + We're still taking input, doing work and getting output
 + Except now the 'work' is to give our real work to someone else
@@ -52,19 +52,20 @@ avg = ds.groupby('time.season') / ds.astype(float).groupby('time.season').sum()
 
 +++
 
-## What is Parallel Programming?
 
-+ Wait.. if we're pitching work, then waiting for it to complete,  what is the difference?
+Wait.. if we're pitching work then jus waiting for it to complete,  what is the difference?
 
 +++ 
 
-## What is Parallel Programming?
 
-+ We can pitch as many jobs as we like, then wait for them all to complete
+We can pitch as many jobs as we like off to other workers then wait for them all to complete
 
 +++
 
-## What is Parallel Programming?
+
+This is like me trying to solve four rubix cubes versus handing off four rubix cubes to my friends. 
+
++++ 
 
 If I have a function that takes 30 seconds and I need to run it 10 times, that will take me 5 minutes in wall time.  If I can pitch those 10 jobs to 10 different CPU's, then waiting for it to complete should only take ~30 seconds (that's 10x improvement!)
 
@@ -73,13 +74,17 @@ If I have a function that takes 30 seconds and I need to run it 10 times, that w
 ## Embarrassingly Parallel Programming
 
 + File conversion
-+ Extract, Transform, Load pipelines
++ Extract, Transform, Load (ETL) pipelines
 + Parameter Sweeps 
 + Anything that can be cut up, worked on, and stitched back together. 
 
 
 +++
-## Who's pitching, Who's Catching?
+
+## General Considerations
++ Who's pitching the work? 
++ Who's catching the work?
++ What exactly is being thrown?
 
 
 ---
@@ -88,8 +93,7 @@ If I have a function that takes 30 seconds and I need to run it 10 times, that w
 
 +++
 
-## How can I do it in Python?
-### (A curated list)
+## A curated list of parallel programming libraries
 + Subprocess
 + Multiprocessing
 + IPyParallel
@@ -99,6 +103,7 @@ If I have a function that takes 30 seconds and I need to run it 10 times, that w
 
 ## Subprocess
 + Run a command line script from python
++ Built-in module (batteries included)
 + The ```subprocess``` module pitches
 + The operating system catches that work
 + Pitch a string that runs the command
@@ -107,9 +112,10 @@ If I have a function that takes 30 seconds and I need to run it 10 times, that w
 
 ## Multiprocessing
 + Run a function in a different process
++ Built-in module (batteries included)
 + the ```multiprocessing``` module pitches
 + A ```Pool``` of process objects catches
-+ Pitch a python function
++ Pitch a python function through the magic of forking
 
 +++
 
@@ -118,6 +124,7 @@ If I have a function that takes 30 seconds and I need to run it 10 times, that w
 + a special ```view``` object does the pitching
 + The ```ipcluster``` or ```ipengine``` commands catch
 + Can be run across computers (but this takes a little work)
++ Pitch messages that contain data/function
 
 
 +++
@@ -127,6 +134,7 @@ If I have a function that takes 30 seconds and I need to run it 10 times, that w
 + A decorated function pitches itself
 + A message queue (```rabbitmq```) catches the work
 + The queue passes this to the ```celery worker``` command
++ Pitch messages the contain data/function
 + The technology that powers instagram. 
 
 +++
