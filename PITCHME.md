@@ -22,9 +22,7 @@ Kitware Inc.
 ```python
 ds = xr.open_dataset('/path/to/some.nc')
 ```
-+ Inputs
-+ Functions
-+ Outputs
+Inputs, Functions, Outputs
 
 +++ 
 
@@ -58,6 +56,8 @@ avg = ds.groupby('time.season') / ds.astype(float).groupby('time.season').sum()
 
 + Wait.. if we're pitching work, then waiting for it to complete,  what is the difference?
 
++++ 
+
 ## What is Parallel Programming?
 
 + We can pitch as many jobs as we like, then wait for them all to complete
@@ -82,7 +82,7 @@ If I have a function that takes 30 seconds and I need to run it 10 times, that w
 ## Who's pitching, Who's Catching?
 
 
---
+---
 
 ## How can I do it in Python?
 
