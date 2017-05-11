@@ -3,3 +3,4 @@ click
 ipyparallel
 celery
 flower
+boto3

@@ -15,7 +15,7 @@ pushd ppp
 sudo -u ubuntu ./bootstrap_ec2.sh
 
 # RabbitMQ
-sudo apt-get install rabbitmq-server
+sudo apt-get -y install rabbitmq-server
 sudo rabbitmq-plugins enable rabbitmq_management
 echo "[{rabbit, [{loopback_users, []}]}]." | sudo tee /etc/rabbitmq/rabbitmq.config
 sudo systemctl restart rabbitmq-server

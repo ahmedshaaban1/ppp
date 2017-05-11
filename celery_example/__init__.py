@@ -10,7 +10,7 @@ try:
         Filters=[{'Name': 'instance-state-name', 'Values': ['running']},
                  {'Name': 'tag:Name', 'Values': ['master']}])
 
-    host = list(instances)[0].public_ip_address
+    host = list(instances)[0].public_dns_name
 
 except:
     host = 'localhost'
