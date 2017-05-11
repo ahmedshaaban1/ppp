@@ -46,14 +46,14 @@ avg = ds.groupby('time.season') / ds.astype(float).groupby('time.season').sum()
 
 +++
 
-+ We're still taking input, doing work and getting output
-+ Except now the 'work' is to give our real work to someone else
++ We're still doing input, function, output
++ Except now the 'work' is to pass our real work on to something else.
 + The output is usually a reference to where we can get the result of the work when it's done.
 
 +++
 
 
-Wait.. if we're pitching work then jus waiting for it to complete,  what is the difference?
+Wait.. if we're pitching work then just waiting for it to complete,  what is the difference?
 
 +++ 
 
@@ -63,7 +63,7 @@ We can pitch as many jobs as we like off to other workers then wait for them all
 +++
 
 
-This is like me trying to solve four Rubik's cubes versus handing off four Rubix cubes to my friends. 
+This is like me trying to solve four Rubik's cubes versus handing off four Rubik's cubes to my friends. 
 
 +++ 
 
