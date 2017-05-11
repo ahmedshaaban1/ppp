@@ -52,7 +52,7 @@ avg = ds.groupby('time.season') / ds.astype(float).groupby('time.season').sum()
 
 +++
 
-+ If we don't want the output we can continue right along. 
++ If we don't want the output we can continue to the next statement. 
 + If we do want the output, we use the reference to wait until the output is available.
 
 +++
