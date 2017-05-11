@@ -34,35 +34,36 @@ ds = xr.open_dataset('/path/to/some.nc')
 avg = ds.groupby('time.season') / ds.astype(float).groupby('time.season').sum()
 ```
 + Some times the work takes a long time.
-+ Can't calculate ```avg``` until ```open_dataset``` is complete. This is called **blocking**
-+ One after another, input, transformation, output
++ Can't calculate the second statement until the first statement is done.
++ One after another, input - transformation - output
 
 +++
 
 ## What is Parallel Programming?
 
-+ Parallel programming is the process of 'pitching' work to some one else.
-+ Once we've pitched our work to someone else,  we can continue to the next statement.
++ Parallel programming is the process of 'pitching' work to something else that 'catches' that work and then does the heavy lifting.
++ Once we've pitched our work we can continue to the next statement.
 
 +++
 
 + We're still doing input, function, output
-+ Except now the 'work' is to pass our real work on to something else.
++ Except now the 'work' is to pass our real work on to someone else.
 + The output is usually a reference to where we can get the result of the work when it's done.
 
 +++
 
 + If we don't want the output we can continue to the next statement. 
 + If we do want the output, we use the reference to wait until the output is available.
++ This is called **blocking**.
 
 +++
 
-Wait.. if we're pitching work then just waiting for it to complete,  what is the difference?
+Wait.. if we're pitching work then just waiting for it to complete,  what is the point? Isn't that just like serial programming?
 
 +++ 
 
 
-We can pitch as many jobs as we like off to other workers then wait for them all to complete
+We can pitch as many jobs as we like off to other workers then wait for them all to complete.
 
 +++
 
