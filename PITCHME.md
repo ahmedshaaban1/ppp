@@ -9,6 +9,7 @@ Kitware Inc.
 ## Plan of Action
 + What is parallel programming?
 + How can I do it in Python?
++ Notebook Examples
 
 ---
 
