@@ -39,6 +39,10 @@ pushd ppp
 sudo -u ubuntu ./bootstrap_ec2.sh
 
 # Celery Worker
+sudo mkdir /var/log/celery
+sudo chown ubuntu:ubuntu /var/log/celery
+sudo mkdir /var/run/celery
+sudo chown ubuntu:ubuntu /var/run/celery
 sudo cp /opt/ppp/misc/celery.service /etc/systemd/system/
 sudo chmod 664 /etc/systemd/system/celery.service
 sudo systemctl daemon-reload
