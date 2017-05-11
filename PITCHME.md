@@ -63,7 +63,7 @@ We can pitch as many jobs as we like off to other workers then wait for them all
 +++
 
 
-This is like me trying to solve four rubix cubes versus handing off four rubix cubes to my friends. 
+This is like me trying to solve four Rubik's cubes versus handing off four Rubix cubes to my friends. 
 
 +++ 
 
@@ -133,11 +133,11 @@ If I have a function that takes 30 seconds and I need to run it 10 times, that w
 + Resiliently run hundreds of millions of functions.
 + A decorated function pitches itself
 + A message queue (```rabbitmq```) catches the work
-+ The queue passes this to the ```celery worker``` command
-+ Pitch messages the contain data/function
-+ The technology that powers instagram. 
++ Queue passes this to the ```celery worker```
++ Pitch messages the contain data/function.
++ The technology that powers Instagram. 
 
-+++
+---
 
 ## Notebook!
 
