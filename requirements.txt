@@ -2,3 +2,4 @@ jupyter
 click
 ipyparallel
 celery
+flower
