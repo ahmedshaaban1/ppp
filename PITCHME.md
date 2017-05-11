@@ -101,7 +101,7 @@ If I have a function that takes 30 seconds and I need to run it 10 times, that w
 + Run a command line script from python
 + The ```subprocess``` module pitches
 + The operating system catches that work
-+ Pitch a string that run's the command
++ Pitch a string that runs the command
 
 +++
 
@@ -123,11 +123,13 @@ If I have a function that takes 30 seconds and I need to run it 10 times, that w
 +++
 
 ## Celery
-+ Resiliently run hundreds of millions of functions in parallel
++ Resiliently run hundreds of millions of functions.
 + A decorated function pitches itself
-+ A message queue called ```rabbitmq``` catches the work
-+ The queue passes the work to a ```celery worker``` command
++ A message queue (```rabbitmq```) catches the work
++ The queue passes this to the ```celery worker``` command
 + The technology that powers instagram. 
 
 +++
+
+## Notebook!
 
